@@ -1,46 +1,64 @@
+import java.util.*
+
 plugins {
-  id("java")
-  id("org.jetbrains.kotlin.jvm") version "1.6.20"
-  id("org.jetbrains.intellij") version "1.5.2"
+    id("java") // java
+    id("org.jetbrains.kotlin.jvm") version "1.6.20" // kotlin
+    id("org.jetbrains.intellij") version "1.6.0" // intellij
 }
 
 group = "com.pingfangx.plugin"
 version = "1.0-SNAPSHOT"
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
-  version.set("2021.2")
-  type.set("IC") // Target IDE Platform
+    version.set("212.5712.43") // for Android Studio Chipmunk
+    type.set("IC") // Target IDE Platform
 
-  plugins.set(listOf(/* Plugin Dependencies */))
+    plugins.set(listOf(/* Plugin Dependencies */))
 }
-
 tasks {
-  // Set the JVM compatibility versions
-  withType<JavaCompile> {
-    sourceCompatibility = "11"
-    targetCompatibility = "11"
-  }
-  withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "11"
-  }
+    // Set the JVM compatibility versions
+    withType<JavaCompile> {
+        sourceCompatibility = "11"
+        targetCompatibility = "11"
+    }
+    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions.jvmTarget = "11"
+    }
 
-  patchPluginXml {
-    sinceBuild.set("212")
-    untilBuild.set("222.*")
-  }
+    patchPluginXml {
+        sinceBuild.set("212")
+        untilBuild.set("222.*")
+    }
 
-  signPlugin {
-    certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-    privateKey.set(System.getenv("PRIVATE_KEY"))
-    password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
-  }
+    signPlugin {
+        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
+        privateKey.set(System.getenv("PRIVATE_KEY"))
+        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
+    }
 
-  publishPlugin {
-    token.set(System.getenv("PUBLISH_TOKEN"))
-  }
+    publishPlugin {
+        token.set(System.getenv("PUBLISH_TOKEN"))
+    }
+
+    runIde {
+        // Absolute path to installed target 3.5 Android Studio to use as
+        // IDE Development Instance (the "Contents" directory is macOS specific):
+        val properties = Properties().apply {
+            val file = File(rootDir, "local.properties")
+            if (file.isFile) {
+                file.inputStream().use {
+                    load(it)
+                }
+            }
+        }
+        properties.getProperty("StudioRunPath")?.let {
+            logger.lifecycle("config ideDir: $it")
+            ideDir.set(file(it))
+        }
+    }
 }
