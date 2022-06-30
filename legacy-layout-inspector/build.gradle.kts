@@ -18,7 +18,7 @@ intellij {
     version.set("212.5712.43") // for Android Studio Chipmunk
     type.set("IC") // Target IDE Platform
 
-    plugins.set(listOf(/* Plugin Dependencies */))
+    plugins.set(listOf("android"))
 }
 tasks {
     // Set the JVM compatibility versions
