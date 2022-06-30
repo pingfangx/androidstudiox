@@ -18,6 +18,10 @@
     But we need it.
     ]]></description>
 
+    <change-notes><![CDATA[
+    <b>v1.0.0</b><br>
+    <li>Add Legacy Layout Inspector action.</li>
+    ]]></change-notes>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
