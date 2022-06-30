@@ -41,5 +41,7 @@
         <fileType name="Legacy Layout Inspector" extensions="li"
                   implementationClass="com.pingfangx.plugin.legacylayoutinspector.LegacyLayoutInspectorFileType"
                   fieldName="INSTANCE"/>
+        <fileEditorProvider
+                implementation="com.pingfangx.plugin.legacylayoutinspector.LegacyLayoutInspectorEditorProvider"/>
     </extensions>
 </idea-plugin>
