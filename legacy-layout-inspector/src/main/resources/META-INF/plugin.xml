@@ -28,6 +28,9 @@
     <depends>com.intellij.modules.platform</depends>
     <!--使用 android 插件中定义的 Action，在 android 插件加载完成后再加载本插件-->
     <depends>org.jetbrains.android</depends>
+    <!--android studio module-->
+    <!--suppress PluginXmlValidity: for android studio only-->
+    <depends>com.intellij.modules.androidstudio</depends>
 
     <actions>
         <action id="com.pingfangx.LegacyLayoutInspectorAction"
