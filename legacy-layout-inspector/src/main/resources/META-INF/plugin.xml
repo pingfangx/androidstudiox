@@ -1,21 +1,12 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
     <id>com.pingfangx.plugin.legacylayoutinspector</id>
 
-    <!-- Public plugin name should be written in Title Case.
-         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
     <name>Legacy Layout Inspector</name>
 
-    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor email="pingfangx@pingfangx.com" url="https://www.pingfangx.com">pingfangx</vendor>
 
-    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
-         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
-         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Android Studio deprecated the layout inspector.<br>
-    But we need it.
+    Android Studio deprecated the layout inspector, but we need it.
     ]]></description>
 
     <change-notes><![CDATA[
@@ -23,10 +14,9 @@
     <li>Add Legacy Layout Inspector action.</li>
     ]]></change-notes>
 
-    <!-- Product and plugin compatibility requirements.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <!--base platform-->
     <depends>com.intellij.modules.platform</depends>
-    <!--使用 android 插件中定义的 Action，在 android 插件加载完成后再加载本插件-->
+    <!--android plugin-->
     <depends>org.jetbrains.android</depends>
     <!--android studio module-->
     <!--suppress PluginXmlValidity: for android studio only-->
@@ -38,8 +28,7 @@
             <add-to-group group-id="AndroidToolsGroup"/>
         </action>
     </actions>
-    <!-- Extension points defined by the plugin.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+
     <extensions defaultExtensionNs="com.intellij">
         <fileType name="Legacy Layout Inspector" extensions="li"
                   implementationClass="com.pingfangx.plugin.legacylayoutinspector.LegacyLayoutInspectorFileType"
