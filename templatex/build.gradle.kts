@@ -1,7 +1,9 @@
+import java.util.*
+
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.6.20"
-    id("org.jetbrains.intellij") version "1.5.2"
+    id("org.jetbrains.intellij") version "1.6.0"
 }
 
 group = "com.pingfangx.plugin"
@@ -11,16 +13,14 @@ repositories {
     mavenCentral()
 }
 
-// Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
     version.set("2021.2")
-    type.set("IC") // Target IDE Platform
+    type.set("IC")
 
-    plugins.set(listOf(/* Plugin Dependencies */))
+    plugins.set(listOf())
 }
 
 tasks {
-    // Set the JVM compatibility versions
     withType<JavaCompile> {
         sourceCompatibility = "11"
         targetCompatibility = "11"
@@ -42,5 +42,20 @@ tasks {
 
     publishPlugin {
         token.set(System.getenv("PUBLISH_TOKEN"))
+    }
+    runIde {
+        val properties = Properties().apply {
+            val file = File(rootDir, "local.properties")
+            if (file.isFile) {
+                file.inputStream().use {
+                    load(it)
+                }
+            }
+        }
+        properties.getProperty("StudioRunPath")?.let {
+            logger.lifecycle("config ideDir: $it")
+            ideDir.set(file(it))
+        }
+        jvmArgs("-Xmx1G")
     }
 }
