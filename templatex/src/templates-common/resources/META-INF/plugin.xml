@@ -1,0 +1,5 @@
+<idea-plugin>
+    <name>TemplateX Templates</name>
+    <vendor email="pingfangx@pingfangx.com" url="https://www.pingfangx.com">pingfangx</vendor>
+    <depends>com.intellij.modules.platform</depends>
+</idea-plugin>
