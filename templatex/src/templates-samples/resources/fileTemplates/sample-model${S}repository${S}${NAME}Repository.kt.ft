@@ -1,0 +1,5 @@
+package ${PACKAGE_NAME}.model.repository
+
+#parse("File Header.java")
+class ${NAME}Repository {
+}

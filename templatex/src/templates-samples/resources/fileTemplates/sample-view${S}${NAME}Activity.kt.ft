@@ -1,0 +1,19 @@
+#set($BASE_ACTIVITY = "Activity")
+#set($BASE_ACTIVITY_QUALIFIED = "android.app.Activity")
+#set($ADD_VIEW_MODEL = true)
+package ${PACKAGE_NAME}.view
+
+#if($ADD_VIEW_MODEL)
+import androidx.activity.viewModels
+#end
+import $BASE_ACTIVITY_QUALIFIED
+#if($ADD_VIEW_MODEL)
+import ${PACKAGE_NAME}.viewmodel.${NAME}ViewModel
+#end
+
+#parse("File Header.java")
+class ${NAME}Activity : $BASE_ACTIVITY() {
+#if($ADD_VIEW_MODEL)
+    private val viewModel: ${NAME}ViewModel by viewModels()
+#end
+}

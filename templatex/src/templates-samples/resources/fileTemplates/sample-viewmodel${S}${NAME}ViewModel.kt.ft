@@ -1,0 +1,10 @@
+package ${PACKAGE_NAME}.viewmodel
+
+import androidx.lifecycle.ViewModel
+import ${PACKAGE_NAME}.model.repository.${NAME}Repository
+
+#parse("File Header.java")
+class ${NAME}ViewModel(
+    private val repository: ${NAME}Repository = ${NAME}Repository()
+) : ViewModel() {
+}

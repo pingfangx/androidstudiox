@@ -1,0 +1,6 @@
+package ${PACKAGE_NAME}.model.data
+
+#parse("File Header.java")
+data class ${NAME}Data(
+    val name: String?,
+)
