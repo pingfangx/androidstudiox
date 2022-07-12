@@ -93,4 +93,14 @@ object TemplateXUtils {
     fun fillSeparator(properties: Properties) {
         properties.setProperty(ATTRIBUTE_FILE_SEPARATOR, File.separator)
     }
+
+    /**
+     * 是否是布尔值变量
+     */
+    fun isBooleanVariable(variable: String): Boolean {
+        return variable.startsWith("ADD_")
+                || variable.startsWith("USE_")
+                || variable.startsWith("IS_")
+                || variable.startsWith("IF_")
+    }
 }

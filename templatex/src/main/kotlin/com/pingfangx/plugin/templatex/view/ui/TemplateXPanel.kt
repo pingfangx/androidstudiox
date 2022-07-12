@@ -81,9 +81,6 @@ class TemplateXPanel(
     private val createTemplatesDialogMode: Boolean
         get() = selectedDir != null
 
-    /** 已输入的属性 */
-    private val inputtedVariables = mutableMapOf<String, String>()
-
     /** 用于只更新某一部分 component */
     private lateinit var splitter: Splitter
 
@@ -100,8 +97,31 @@ class TemplateXPanel(
     /** 提供的属性 */
     val properties: Properties
         get() = Properties(defaultProperties).apply {
-            putAll(inputtedVariables)
+            for (variable in allVariables) {
+                val value = inputtedVariables[variable]?.let {
+                    if (TemplateXUtils.isBooleanVariable(variable)) {
+                        it.toBoolean()
+                    } else {
+                        it
+                    }
+                } ?: run {
+                    // 设置默认值，用于解析变量
+                    if (TemplateXUtils.isBooleanVariable(variable)) {
+                        false
+                    } else {
+                        ""
+                    }
+                }
+                put(variable, value)
+            }
         }
+
+    /** 所有需要设置的变量 */
+    private val allVariables = mutableSetOf<String>()
+
+    /** 已输入的变量 */
+    private val inputtedVariables
+        get() = currentConfig.inputtedVariables
 
     /** 是否在创建后打开文件  */
     val openFilesAfterCreation: Boolean
@@ -279,30 +299,44 @@ class TemplateXPanel(
         }
         if (createTemplatesDialogMode) {
             titledRow(TemplateXBundle.message("template.specify.variables")) {
-                val unsetVariables = mutableSetOf<String>()
                 if (currentConfig.selectionTemplateNames.isEmpty()) {
                     row {
                         label(TemplateXBundle.message("template.please.select.templates.from.left"))
                     }
                 } else {
+                    allVariables.clear()
                     // 首先添加 NAME，那其排在最前
-                    unsetVariables.add(FileTemplate.ATTRIBUTE_NAME)
+                    allVariables.add(FileTemplate.ATTRIBUTE_NAME)
                     for (templateName in currentConfig.selectionTemplateNames) {
                         val template = allFileTemplates.find { it.name == templateName } ?: continue
-                        unsetVariables.addAll(template.getUnsetAttributes(defaultProperties, project))
-                        AndroidFileTemplateUtils.fillVariables(template, unsetVariables, inputtedVariables)
+                        allVariables.addAll(template.getUnsetAttributes(defaultProperties, project))
+                        AndroidFileTemplateUtils.fillVariables(template, allVariables, inputtedVariables)
                     }
-                    for (variable in unsetVariables) {
+                    for (variable in allVariables) {
                         row(variable) {
-                            val textField = textField({ inputtedVariables.getOrDefault(variable, "") }, {}).component
-                            if (variable == FileTemplate.ATTRIBUTE_NAME) {
-                                preferredFocusedComponent = textField
-                            }
-                            textField.document.addDocumentListener(object : DocumentAdapter() {
-                                override fun textChanged(e: DocumentEvent) {
-                                    inputtedVariables[variable] = textField.text
+                            if (TemplateXUtils.isBooleanVariable(variable)) {
+                                // row(variable) 对齐，此处不再指定 text
+                                val checkBox = checkBox(
+                                    "",
+                                    inputtedVariables[variable].toBoolean()
+                                ).component
+                                checkBox.addItemListener {
+                                    inputtedVariables[variable] = (it.stateChange == ItemEvent.SELECTED).toString()
                                 }
-                            })
+                            } else {
+                                val textField =
+                                    textField(
+                                        { inputtedVariables.getOrDefault(variable, "") }, {}
+                                    ).component
+                                if (variable == FileTemplate.ATTRIBUTE_NAME) {
+                                    preferredFocusedComponent = textField
+                                }
+                                textField.document.addDocumentListener(object : DocumentAdapter() {
+                                    override fun textChanged(e: DocumentEvent) {
+                                        inputtedVariables[variable] = textField.text
+                                    }
+                                })
+                            }
                         }
                     }
                 }
@@ -329,6 +363,7 @@ class TemplateXPanel(
         return TemplateXConfigData(
             selectionTemplateNames = currentConfig.selectionTemplateNames.filter(predicate).toMutableSet(),
             ignoredTemplateNames = currentConfig.ignoredTemplateNames.filter(predicate).toMutableSet(),
+            inputtedVariables = currentConfig.inputtedVariables,
             openFilesAfterCreation = currentConfig.openFilesAfterCreation,
             showTemplatesContainingSeparatorInNewGroup = currentConfig.showTemplatesContainingSeparatorInNewGroup
         )
