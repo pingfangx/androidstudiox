@@ -23,6 +23,7 @@ import com.intellij.util.ui.JBUI
 import com.pingfangx.plugin.templatex.TemplateXBundle
 import com.pingfangx.plugin.templatex.android.AndroidFileTemplateUtils
 import com.pingfangx.plugin.templatex.model.data.TemplateXConfigData
+import com.pingfangx.plugin.templatex.model.data.TemplateXStateService
 import com.pingfangx.plugin.templatex.util.TemplateXUtils
 import com.pingfangx.plugin.tree.view.helper.TreeHelper
 import java.awt.BorderLayout
@@ -45,14 +46,6 @@ import javax.swing.tree.TreePath
 class TemplateXPanel(
     private val project: Project,
     /**
-     * 原始配置
-     *
-     * 用于 [resetConfig] 时还原
-     * [apply] 时设置
-     * [isModified] 判断是否修改
-     */
-    private val originConfig: TemplateXConfigData,
-    /**
      * 选中的目录
      * 如果是在设置中，则为 null
      */
@@ -60,6 +53,15 @@ class TemplateXPanel(
 ) : JPanel(BorderLayout()) {
     /** 所有的模版，在 [initComponents] 时更新 */
     private val allFileTemplates = mutableListOf<FileTemplate>()
+
+    /**
+     * 原始配置
+     *
+     * 用于 [resetConfig] 时还原
+     * [apply] 时设置
+     * [isModified] 判断是否修改
+     */
+    private val originConfig: TemplateXConfigData by lazy { TemplateXStateService.config }
 
     /**
      * 各变量都需要持有一份，并在控件变化时进行更新

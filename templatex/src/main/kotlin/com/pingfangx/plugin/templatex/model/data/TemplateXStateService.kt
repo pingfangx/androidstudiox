@@ -1,9 +1,9 @@
 package com.pingfangx.plugin.templatex.model.data
 
+import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
-import com.intellij.openapi.project.Project
 import com.intellij.util.xmlb.XmlSerializerUtil
 
 /**
@@ -28,6 +28,9 @@ class TemplateXStateService : PersistentStateComponent<TemplateXStateService> {
     }
 
     companion object {
-        fun getInstance(project: Project) = project.getService(TemplateXStateService::class.java)
+        val instance: TemplateXStateService
+            get() = ApplicationManager.getApplication().getService(TemplateXStateService::class.java)
+        val config: TemplateXConfigData
+            get() = instance.config
     }
 }

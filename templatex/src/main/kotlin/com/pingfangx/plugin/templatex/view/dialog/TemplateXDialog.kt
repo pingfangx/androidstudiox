@@ -5,7 +5,6 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.psi.PsiDirectory
 import com.pingfangx.plugin.templatex.TemplateXBundle
-import com.pingfangx.plugin.templatex.model.data.TemplateXStateService
 import com.pingfangx.plugin.templatex.view.ui.TemplateXPanel
 import java.awt.event.ActionEvent
 import javax.swing.AbstractAction
@@ -22,12 +21,6 @@ class TemplateXDialog(
     private val project: Project,
     private val selectedDir: PsiDirectory,
 ) : DialogWrapper(project) {
-    /**
-     * 配置
-     *
-     * 如果需要点确定再保存，可以考虑传一个 copy，然后点确定再用 copy 赋值回去
-     */
-    private val config by lazy { TemplateXStateService.getInstance(project).config }
     private lateinit var templateXPanel: TemplateXPanel
 
     /** 模板和属性 */
@@ -44,7 +37,7 @@ class TemplateXDialog(
         init()
     }
 
-    override fun createCenterPanel(): JComponent = TemplateXPanel(project, config, selectedDir).also {
+    override fun createCenterPanel(): JComponent = TemplateXPanel(project, selectedDir).also {
         templateXPanel = it
     }
 

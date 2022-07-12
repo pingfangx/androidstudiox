@@ -22,10 +22,9 @@
     </actions>
 
     <extensions defaultExtensionNs="com.intellij">
-        <projectService serviceImplementation="com.pingfangx.plugin.templatex.model.data.TemplateXStateService"/>
-        <projectConfigurable
+        <applicationService serviceImplementation="com.pingfangx.plugin.templatex.model.data.TemplateXStateService"/>
+        <applicationConfigurable
                 instance="com.pingfangx.plugin.templatex.config.TemplateXConfigurable"
-                nonDefaultProject="false"
                 parentId="tools"
                 id="com.pingfangx.plugin.templatex.config.TemplateXConfigurable"/>
         <createFromTemplateHandler implementation="com.pingfangx.plugin.templatex.handler.TemplateXTemplateHandler"/>
