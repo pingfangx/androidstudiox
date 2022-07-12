@@ -17,7 +17,7 @@ intellij {
     version.set("2021.2")
     type.set("IC")
 
-    plugins.set(listOf())
+    plugins.set(listOf("android"))
 }
 
 tasks {

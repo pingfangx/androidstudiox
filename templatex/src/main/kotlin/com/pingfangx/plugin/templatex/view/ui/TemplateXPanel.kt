@@ -126,6 +126,7 @@ class TemplateXPanel(
     private fun initComponents() {
         allFileTemplates.clear()
         allFileTemplates.addAll(TemplateXUtils.getFileTemplates(project))
+        allFileTemplates.addAll(AndroidFileTemplateUtils.getSupportedAndroidTemplates())
         splitter = Splitter().apply {
             firstComponent = createChooseTemplatePanel()
             secondComponent = createVariablesPanel()
@@ -289,6 +290,7 @@ class TemplateXPanel(
                     for (templateName in currentConfig.selectionTemplateNames) {
                         val template = allFileTemplates.find { it.name == templateName } ?: continue
                         unsetVariables.addAll(template.getUnsetAttributes(defaultProperties, project))
+                        AndroidFileTemplateUtils.fillVariables(template, unsetVariables, inputtedVariables)
                     }
                     for (variable in unsetVariables) {
                         row(variable) {

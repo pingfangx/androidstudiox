@@ -22,7 +22,7 @@ class TemplateXAction : AnAction() {
         if (dialog.showAndGet()) {
             val (fileTemplates, properties) = dialog.templatesAndProperties
             val openFilesAfterCreation = dialog.openFilesAfterCreation
-            val psiElements = TemplatesCreatorImpl().create(fileTemplates, properties, selectedDir)
+            val psiElements = TemplatesCreatorImpl(e.dataContext).create(fileTemplates, properties, selectedDir)
             if (openFilesAfterCreation) {
                 EditorUtils.openEditors(project, psiElements.mapNotNull { it?.containingFile?.virtualFile }, true)
             }

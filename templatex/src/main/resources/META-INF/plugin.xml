@@ -10,6 +10,8 @@
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
+    <!--android plugin-->
+    <depends>org.jetbrains.android</depends>
 
     <resource-bundle>messages.TemplateXBundle</resource-bundle>
 
