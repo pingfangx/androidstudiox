@@ -16,15 +16,15 @@ class TemplateXTemplateHandler : DefaultCreateFromTemplateHandler() {
     private val config by lazy { TemplateXStateService.config }
 
     override fun handlesTemplate(template: FileTemplate): Boolean {
-        return if (!config.showTemplatesContainingSeparatorInNewGroup) {
+        return if (!config.showTemplatesContainingVariableInNewGroup) {
             // 如果不显示，则需要判断是否包含分隔符
-            TemplateXUtils.containsSeparator(template.name)
+            TemplateXUtils.containsVariable(template.name)
         } else {
             true
         }
     }
 
     override fun canCreate(dirs: Array<out PsiDirectory>): Boolean {
-        return config.showTemplatesContainingSeparatorInNewGroup
+        return config.showTemplatesContainingVariableInNewGroup
     }
 }

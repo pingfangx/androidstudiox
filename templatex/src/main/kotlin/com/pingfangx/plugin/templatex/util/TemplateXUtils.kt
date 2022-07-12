@@ -55,9 +55,9 @@ object TemplateXUtils {
     fun configureTemplatesDialog(project: Project) =
         ConfigureTemplatesDialog(project)
 
-    /** 是否包含分隔符 */
-    fun containsSeparator(templateName: String): Boolean =
-        templateName.contains(TEMPLATE_NAME_AND_FILE_NAME_DELIMITER)
+    /** 是否包含变量 */
+    fun containsVariable(templateName: String): Boolean =
+        templateName.contains(VARIABLE_CHAR)
 
     /** 从模板获取文件名 */
     fun getFileNameFromTemplate(template: FileTemplate, properties: Properties): String {

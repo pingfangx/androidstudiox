@@ -291,11 +291,11 @@ class TemplateXPanel(
             }
             row {
                 checkBox(
-                    TemplateXBundle.message("template.show.templates.containing.separator.in.new.group"),
-                    { currentConfig.showTemplatesContainingSeparatorInNewGroup },
+                    TemplateXBundle.message("template.show.templates.containing.variable.in.new.group"),
+                    { currentConfig.showTemplatesContainingVariableInNewGroup },
                     {}
                 ).component.addItemListener {
-                    currentConfig.showTemplatesContainingSeparatorInNewGroup = it.stateChange == ItemEvent.SELECTED
+                    currentConfig.showTemplatesContainingVariableInNewGroup = it.stateChange == ItemEvent.SELECTED
                 }
             }
         }
@@ -367,7 +367,7 @@ class TemplateXPanel(
             ignoredTemplateNames = currentConfig.ignoredTemplateNames.filter(predicate).toMutableSet(),
             inputtedVariables = currentConfig.inputtedVariables,
             openFilesAfterCreation = currentConfig.openFilesAfterCreation,
-            showTemplatesContainingSeparatorInNewGroup = currentConfig.showTemplatesContainingSeparatorInNewGroup
+            showTemplatesContainingVariableInNewGroup = currentConfig.showTemplatesContainingVariableInNewGroup
         )
     }
 

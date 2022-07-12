@@ -22,8 +22,8 @@ data class TemplateXConfigData(
     var inputtedVariables: MutableMap<String, String> = mutableMapOf(),
     /** 是否在创建后打开文件 */
     var openFilesAfterCreation: Boolean = true,
-    /** 是否在新建菜单显示包含分隔符的模板 */
-    var showTemplatesContainingSeparatorInNewGroup: Boolean = true,
+    /** 是否在新建菜单显示包含变量的模板 */
+    var showTemplatesContainingVariableInNewGroup: Boolean = false,
 ) : Serializable {
     fun update(source: TemplateXConfigData) {
         selectionTemplateNames.clear()
@@ -33,6 +33,6 @@ data class TemplateXConfigData(
         inputtedVariables.clear()
         inputtedVariables.putAll(source.inputtedVariables)
         openFilesAfterCreation = source.openFilesAfterCreation
-        showTemplatesContainingSeparatorInNewGroup = source.showTemplatesContainingSeparatorInNewGroup
+        showTemplatesContainingVariableInNewGroup = source.showTemplatesContainingVariableInNewGroup
     }
 }
