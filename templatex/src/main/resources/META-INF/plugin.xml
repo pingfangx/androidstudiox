@@ -6,12 +6,13 @@
     <vendor email="pingfangx@pingfangx.com" url="https://www.pingfangx.com">pingfangx</vendor>
 
     <description><![CDATA[
-    A pingfangx extension for file templates.
+    A pingfangx extension for <a href="https://github.com/pingfangx/androidstudiox/wiki/File-Template">file templates</a>.
     <ul>
         <li>Select and create a group of templates.</li>
         <li>Use variable ${S} for File.separator in the template's name.</li>
         <li>Create Android layout resource file.</li>
     </ul>
+    <a href="https://github.com/pingfangx/androidstudiox/tree/master/templatex">Source Code</a> | <a href="https://github.com/pingfangx/androidstudiox/wiki">Wiki</a> | <a href="https://github.com/pingfangx/androidstudiox/issues">Issue Tracker</a>
     ]]></description>
 
     <change-notes><![CDATA[

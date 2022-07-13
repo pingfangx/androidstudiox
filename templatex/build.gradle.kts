@@ -8,7 +8,7 @@ plugins {
 
 val templatexPluginId = "com.pingfangx.plugin.templatex"
 group = "com.pingfangx.plugin"
-version = "1.0.1"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
