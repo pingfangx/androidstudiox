@@ -28,7 +28,9 @@
     <resource-bundle>messages.TemplateXBundle</resource-bundle>
 
     <actions>
-        <action id="com.pingfangx.TemplateX" class="com.pingfangx.plugin.templatex.TemplateXAction">
+        <action class="com.pingfangx.plugin.templatex.TemplateXAction"
+                id="com.pingfangx.TemplateX"
+                icon="com.pingfangx.plugin.templatex.icon.TemplateXIcons.Icon">
             <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
         </action>
     </actions>

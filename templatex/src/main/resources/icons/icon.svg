@@ -1,0 +1,18 @@
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <g stroke="null" id="svg_1">
+            <polygon stroke="null" id="svg_2"
+                     points="1,15.387968598494467 15.105163986985758,15.387968598494467 15.105163986985758,8.673583011097492 1,8.673583011097492 "
+                     fill-opacity="0.7" fill="#40B6E0"/>
+            <polygon stroke="null" id="svg_3"
+                     points="6.642064884732179,1 2.8806886499417885,4.836791505548746 6.642064884732179,4.836791505548746 "
+                     fill-opacity="0.8" fill="#9AA7B0"/>
+            <polygon stroke="null" id="svg_4"
+                     points="7.582410097280729,1 7.582410097280729,5.7959896535479345 2.8806886499417885,5.7959896535479345 2.8806886499417885,7.714386311695648 12.284130479526482,7.714386311695648 12.284130479526482,1 "
+                     fill-opacity="0.8" fill="#9AA7B0"/>
+            <text transform="matrix(0.372277 0 0 0.379741 0.627723 0.620259)" stroke="null" font-weight="bold"
+                  fill-opacity="0.7" xml:space="preserve" font-family="Noto Sans JP" font-size="17"
+                  id="svg_6" y="36.74603" x="19.52381" stroke-width="0" fill="#231F20">X</text>
+        </g>
+    </g>
+</svg>
