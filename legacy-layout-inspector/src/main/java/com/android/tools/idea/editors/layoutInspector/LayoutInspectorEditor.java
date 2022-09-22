@@ -21,7 +21,7 @@ import com.android.ddmlib.Client;
 import com.android.layoutinspector.model.ClientWindow;
 import com.android.layoutinspector.parser.LayoutFileDataParser;
 import com.android.tools.idea.flags.ExperimentalSettingsConfigurable;
-import com.android.tools.idea.flags.StudioFlags;
+import com.android.tools.idea.flagslegacy.StudioFlags;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.structureView.StructureViewBuilder;

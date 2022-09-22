@@ -19,7 +19,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.android.layoutinspector.model.DisplayInfo;
 import com.android.layoutinspector.model.ViewNode;
 import com.android.tools.idea.ui.MaterialColors;
-import com.android.tools.idea.flags.StudioFlags;
+import com.android.tools.idea.flagslegacy.StudioFlags;
 import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import com.intellij.ui.paint.LinePainter2D;

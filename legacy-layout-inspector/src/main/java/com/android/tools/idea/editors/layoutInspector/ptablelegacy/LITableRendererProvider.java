@@ -17,7 +17,7 @@ package com.android.tools.idea.editors.layoutInspector.ptablelegacy;
 
 import com.android.tools.property.ptablelegacy.*;
 import com.android.tools.idea.editors.layoutInspector.ui.PropertiesTablePanel;
-import com.android.tools.idea.flags.StudioFlags;
+import com.android.tools.idea.flagslegacy.StudioFlags;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.ColoredTableCellRenderer;

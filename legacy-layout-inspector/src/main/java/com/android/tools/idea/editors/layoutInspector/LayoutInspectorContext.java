@@ -35,7 +35,7 @@ import com.android.tools.idea.editors.layoutInspector.ptablelegacy.LITableRender
 import com.android.tools.idea.editors.layoutInspector.ui.RollOverTree;
 import com.android.tools.idea.editors.layoutInspector.ui.ViewNodeActiveDisplay;
 import com.android.tools.idea.editors.layoutInspector.ui.ViewNodeTreeRenderer;
-import com.android.tools.idea.flags.StudioFlags;
+import com.android.tools.idea.flagslegacy.StudioFlags;
 import com.android.tools.idea.observable.collections.ObservableList;
 import com.google.wireless.android.sdk.stats.AndroidStudioEvent;
 import com.google.wireless.android.sdk.stats.LayoutInspectorEvent;

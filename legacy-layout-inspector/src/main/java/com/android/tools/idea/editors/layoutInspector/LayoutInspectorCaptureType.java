@@ -15,7 +15,7 @@
  */
 package com.android.tools.idea.editors.layoutInspector;
 
-import com.android.tools.idea.flags.StudioFlags;
+import com.android.tools.idea.flagslegacy.StudioFlags;
 import com.android.tools.idea.profiling.capture.FileCaptureType;
 import com.android.tools.idea.ui.LayoutInspectorSettingsKt;
 import com.google.wireless.android.sdk.stats.AndroidStudioEvent.ProfilerCaptureType;

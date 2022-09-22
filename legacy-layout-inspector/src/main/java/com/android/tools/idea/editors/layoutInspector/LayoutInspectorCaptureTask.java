@@ -23,7 +23,7 @@ import com.android.layoutinspector.LayoutInspectorResult;
 import com.android.layoutinspector.ProtocolVersion;
 import com.android.layoutinspector.model.ClientWindow;
 import com.android.tools.analytics.UsageTracker;
-import com.android.tools.idea.flags.StudioFlags;
+import com.android.tools.idea.flagslegacy.StudioFlags;
 import com.android.tools.idea.profiling.capture.Capture;
 import com.android.tools.idea.profiling.capture.CaptureService;
 import com.android.tools.idea.stats.AndroidStudioUsageTracker;
