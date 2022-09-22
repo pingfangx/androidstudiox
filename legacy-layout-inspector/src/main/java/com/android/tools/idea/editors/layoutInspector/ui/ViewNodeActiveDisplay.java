@@ -321,13 +321,22 @@ public class ViewNodeActiveDisplay extends JComponent {
       newClipY2 = Math.min(clipY2, boxBottom);
     }
     if (newClipX1 < x && newClipX2 > x && newClipY1 < y && newClipY2 > y) {
+      // BEGIN pingfangx changed: Do not return the first found child, still iterate to find the smallest child
+      ViewNode result = null;
       for (int i = node.getChildren().size() - 1; i >= 0; i--) {
         ViewNode child = node.getChildAt(i);
-        ViewNode ret = updateSelection(child, x, y, firstNoDrawChild, newClipX1, newClipY1, newClipX2, newClipY2);
-        if (ret != null) {
-          return ret;
+        ViewNode found = updateSelection(child, x, y, firstNoDrawChild, newClipX1, newClipY1, newClipX2, newClipY2);
+        if (found != null) {
+          if (result == null ||
+              (result.getPreviewBox().width >= found.getPreviewBox().width && result.getPreviewBox().height >= found.getPreviewBox().height)) {
+            result = found;
+          }
         }
       }
+      if (result != null) {
+        return result;
+      }
+      // END pingfangx changed
     }
     if (boxpos.x < x && boxRight > x && boxpos.y < y && boxBottom > y) {
       if (node.getDisplayInfo().getWillNotDraw()) {

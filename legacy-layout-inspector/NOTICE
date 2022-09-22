@@ -18,3 +18,7 @@ android/src/com/android/tools/idea/ui/LayoutInspectorSettings.kt
 android-common/src/com/android/tools/idea/flags/StudioFlags.java
 
 * Copyright (C) 2018 The Android Open Source Project
+
+This project's feature of "optimise selection to find the smallest view" is inspired by "如何打造稳定、好用的 Android LayoutInspector？"
+https://mp.weixin.qq.com/s/Fzh6ZhyothpOGWjNMm3ubg
+李建新 字节跳动技术团队
