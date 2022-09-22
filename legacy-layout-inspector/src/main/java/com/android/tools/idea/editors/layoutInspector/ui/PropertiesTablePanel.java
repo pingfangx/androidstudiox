@@ -17,10 +17,10 @@ package com.android.tools.idea.editors.layoutInspector.ui;
 
 import com.android.annotations.Nullable;
 import com.google.common.annotations.VisibleForTesting;
-import com.android.tools.property.ptable.PTable;
-import com.android.tools.property.ptable.PTableGroupItem;
-import com.android.tools.property.ptable.PTableItem;
-import com.android.tools.property.ptable.PTableModel;
+import com.android.tools.property.ptablelegacy.PTable;
+import com.android.tools.property.ptablelegacy.PTableGroupItem;
+import com.android.tools.property.ptablelegacy.PTableItem;
+import com.android.tools.property.ptablelegacy.PTableModel;
 import com.android.tools.adtui.workbench.ToolContent;
 import com.android.tools.idea.editors.layoutInspector.LayoutInspectorContext;
 import com.intellij.openapi.Disposable;

@@ -15,9 +15,9 @@
  */
 package com.android.tools.idea.editors.layoutInspector.ptable
 
-import com.android.tools.property.ptable.PTableCellEditor
-import com.android.tools.property.ptable.PTableCellEditorProvider
-import com.android.tools.property.ptable.PTableItem
+import com.android.tools.property.ptablelegacy.PTableCellEditor
+import com.android.tools.property.ptablelegacy.PTableCellEditorProvider
+import com.android.tools.property.ptablelegacy.PTableItem
 import java.awt.Component
 import javax.swing.JTable
 

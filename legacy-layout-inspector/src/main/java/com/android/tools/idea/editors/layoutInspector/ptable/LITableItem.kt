@@ -16,7 +16,7 @@
 package com.android.tools.idea.editors.layoutInspector.ptable
 
 import com.android.layoutinspector.model.ViewProperty
-import com.android.tools.property.ptable.PTableItem
+import com.android.tools.property.ptablelegacy.PTableItem
 import com.android.tools.idea.editors.layoutInspector.DefaultNoEditHandler
 import com.android.tools.idea.editors.layoutInspector.EditHandler
 
