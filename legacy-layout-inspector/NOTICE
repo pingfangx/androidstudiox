@@ -1,0 +1,20 @@
+Legacy Layout Inspector
+Copyright 2022 pingfangx <https://www.pingfangx.com>
+
+==
+
+AOSP:
+--
+This project contains a modified potion of 'AOSP'.
+
+(https://android.googlesource.com/platform/tools/base)
+layoutinspector/src/com/android/layoutinspector/
+
+(https://android.googlesource.com/platform/tools/adt/idea)
+android-layout-inspector/src/com/android/tools/idea/editors/layoutInspector/
+android/src/com/android/tools/idea/profiling/
+layout-ui/src/main/java/com/android/tools/property/ptable/
+android/src/com/android/tools/idea/ui/LayoutInspectorSettings.kt
+android-common/src/com/android/tools/idea/flags/StudioFlags.java
+
+* Copyright (C) 2018 The Android Open Source Project
