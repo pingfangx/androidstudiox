@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.pingfangx.plugin"
-version = "1.0.0"
+version = "1.1.0"
 
 repositories {
     mavenCentral()
@@ -15,7 +15,7 @@ repositories {
 
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
-    version.set("212.5712.43") // for Android Studio Chipmunk
+    version.set("213.7172.25") // for Android Studio Dolphin
     type.set("IC") // Target IDE Platform
 
     plugins.set(listOf("android"))
@@ -31,8 +31,8 @@ tasks {
     }
 
     patchPluginXml {
-        sinceBuild.set("212")
-        untilBuild.set("222.*")
+        sinceBuild.set("213")
+        untilBuild.set("223.*")
     }
 
     signPlugin {

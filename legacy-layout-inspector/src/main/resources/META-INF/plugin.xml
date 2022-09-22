@@ -6,12 +6,20 @@
     <vendor email="pingfangx@pingfangx.com" url="https://www.pingfangx.com">pingfangx</vendor>
 
     <description><![CDATA[
-    Android Studio deprecated the layout inspector, but we need it.
+    Android Studio deprecated the legacy layout inspector, but we need it.
     ]]></description>
 
     <change-notes><![CDATA[
-    <b>v1.0.0</b><br>
-    <li>Add Legacy Layout Inspector action.</li>
+    <b>1.0.0</b><br>
+    <ul>
+        <li>Add Legacy Layout Inspector action</li>
+    </ul>
+
+    <b>1.1.0</b><br>
+    <ul>
+        <li>Support Android Studio Dolphin | 2021.3.1</li>
+        <li>Optimise selection to find the smallest view</li>
+    </ul>
     ]]></change-notes>
 
     <!--base platform-->
