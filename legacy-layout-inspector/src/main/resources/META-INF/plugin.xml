@@ -40,4 +40,11 @@
         <fileEditorProvider
                 implementation="com.pingfangx.plugin.legacylayoutinspector.LegacyLayoutInspectorEditorProvider"/>
     </extensions>
+    <extensionPoints>
+        <extensionPoint qualifiedName="com.android.captureType"
+                        interface="com.android.tools.idea.profiling.capture.CaptureType"/>
+    </extensionPoints>
+    <extensions defaultExtensionNs="com.android">
+        <captureType implementation="com.android.tools.idea.editors.layoutInspector.LayoutInspectorCaptureType"/>
+    </extensions>
 </idea-plugin>
