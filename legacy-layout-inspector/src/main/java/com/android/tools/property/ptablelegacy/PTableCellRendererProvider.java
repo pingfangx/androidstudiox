@@ -13,26 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.tools.property.ptable;
+package com.android.tools.property.ptablelegacy;
 
-import com.android.tools.adtui.common.SwingCoordinate;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.table.TableCellRenderer;
 
-public interface PNameRenderer extends TableCellRenderer {
+public interface PTableCellRendererProvider {
 
-  /**
-   * Returns true if the given coordinate is considered on a star icon.
-   */
-  default boolean hitTestStarIcon(@SwingCoordinate int x, @SwingCoordinate int y) {
-    return false;
-  }
+  @NotNull
+  PNameRenderer getNameCellRenderer(@NotNull PTableItem item);
 
-  /**
-   * Returns true if the given coordinate is considered on the expand/collapse icon.
-   */
-  default boolean hitTestTreeNodeIcon(@NotNull PTableItem item, @SwingCoordinate int x, @SwingCoordinate int y) {
-    return false;
-  }
+  @NotNull
+  TableCellRenderer getValueCellRenderer(@NotNull PTableItem item);
 }

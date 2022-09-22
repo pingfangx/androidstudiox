@@ -13,22 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.tools.property.ptable;
+package com.android.tools.property.ptablelegacy;
 
-/**
- * Indicates whether an item in a table is starred, can be starred, or cannot be starred.
- */
-public enum StarState {
-  STARRED, STAR_ABLE, NOT_STAR_ABLE;
+import com.android.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
-  public StarState opposite() {
-    switch (this) {
-      case STARRED:
-        return STAR_ABLE;
-      case STAR_ABLE:
-        return STARRED;
-      default:
-        return NOT_STAR_ABLE;
-    }
-  }
+public interface PTableCellEditorProvider {
+
+  @Nullable
+  PTableCellEditor getCellEditor(@NotNull PTableItem item, int column);
 }

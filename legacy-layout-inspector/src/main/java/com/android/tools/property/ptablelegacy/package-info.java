@@ -17,4 +17,4 @@
 /**
  * A generic "property table" widget that has 2 columns (name and value).
  */
-package com.android.tools.property.ptable;
+package com.android.tools.property.ptablelegacy;

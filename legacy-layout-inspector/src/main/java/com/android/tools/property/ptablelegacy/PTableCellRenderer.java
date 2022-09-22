@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.tools.property.ptable;
+package com.android.tools.property.ptablelegacy;
 
 import com.intellij.ui.SimpleColoredRenderer;
 import com.intellij.util.ui.UIUtil;
@@ -54,5 +54,5 @@ public abstract class PTableCellRenderer extends SimpleColoredRenderer implement
   }
 
   protected abstract void customizeCellRenderer(
-    @NotNull PTable table, @NotNull PTableItem item, boolean selected, boolean hasFocus, int row, int column);
+      @NotNull PTable table, @NotNull PTableItem item, boolean selected, boolean hasFocus, int row, int column);
 }

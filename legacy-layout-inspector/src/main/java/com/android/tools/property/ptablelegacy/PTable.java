@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.tools.property.ptable;
+package com.android.tools.property.ptablelegacy;
 
 import com.intellij.ide.CopyProvider;
 import com.intellij.ide.CutProvider;
