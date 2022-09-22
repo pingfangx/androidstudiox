@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.tools.idea.editors.layoutInspector.ptable;
+package com.android.tools.idea.editors.layoutInspector.ptablelegacy;
 
 import com.android.tools.property.ptablelegacy.*;
 import com.android.tools.idea.editors.layoutInspector.ui.PropertiesTablePanel;
@@ -33,7 +33,7 @@ import java.awt.*;
 public class LITableRendererProvider implements PTableCellRendererProvider {
   private static LITableRendererProvider ourInstance = new LITableRendererProvider();
 
-  private final LITableNameRenderer myNameRenderer;
+  private final com.android.tools.idea.editors.layoutInspector.ptablelegacy.LITableNameRenderer myNameRenderer;
   private final LIItemCellRenderer myItemCellRenderer;
   private final TableCellRenderer myEditableItemCellRenderer;
 
