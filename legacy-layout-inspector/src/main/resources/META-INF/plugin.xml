@@ -32,6 +32,8 @@
     <extensions defaultExtensionNs="com.intellij">
         <projectService serviceInterface="com.android.tools.idea.editors.layoutInspector.AndroidLayoutInspectorService"
                         serviceImplementation="com.android.tools.idea.editors.layoutInspector.impl.AndroidLayoutInspectorServiceImpl"/>
+        <projectService serviceImplementation="com.android.tools.idea.profiling.capture.CaptureService"/>
+        <applicationService serviceImplementation="com.android.tools.idea.profiling.capture.CaptureTypeService"/>
         <fileType name="Legacy Layout Inspector" extensions="li"
                   implementationClass="com.pingfangx.plugin.legacylayoutinspector.LegacyLayoutInspectorFileType"
                   fieldName="INSTANCE"/>
