@@ -205,4 +205,11 @@ public class LayoutInspectorEditor extends UserDataHolderBase implements FileEdi
   public void setSources(@Nullable Client client, @Nullable ClientWindow window) {
     myContext.setSources(client, window);
   }
+
+  // BEGIN pingfangx added: To suppress super's exception report.
+  @Override
+  public @Nullable VirtualFile getFile() {
+    return myVirtualFile;
+  }
+  // END pingfangx added
 }

@@ -1,6 +1,6 @@
 /*
  * Copyright 2022 pingfangx <https://www.pingfangx.com>
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.android.tools.idea.ui
 
-/**
- * A generic "property table" widget that has 2 columns (name and value).
- */
-// BEGIN pingfangx changed: Move package to ptablelegacy to separate it from the new ptable package.
-package com.android.tools.property.ptablelegacy;
+// BEGIN pingfangx changed: always be true.
+val enableLiveLayoutInspector=true
 // END pingfangx changed
