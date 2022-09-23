@@ -10,15 +10,15 @@
     ]]></description>
 
     <change-notes><![CDATA[
-    <b>1.0.0</b><br>
-    <ul>
-        <li>Add Legacy Layout Inspector action</li>
-    </ul>
-
     <b>1.1.0</b><br>
     <ul>
         <li>Support Android Studio Dolphin | 2021.3.1</li>
         <li>Optimise selection to find the smallest view</li>
+    </ul>
+
+    <b>1.0.0</b><br>
+    <ul>
+        <li>Add Legacy Layout Inspector action</li>
     </ul>
     ]]></change-notes>
 
