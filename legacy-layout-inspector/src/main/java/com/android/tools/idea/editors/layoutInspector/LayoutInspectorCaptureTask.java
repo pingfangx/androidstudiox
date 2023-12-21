@@ -15,6 +15,7 @@
  */
 package com.android.tools.idea.editors.layoutInspector;
 
+import com.android.tools.analytics.UsageTrackerUtils;
 import com.google.common.annotations.VisibleForTesting;
 import com.android.ddmlib.Client;
 import com.android.layoutinspector.LayoutInspectorBridge;
@@ -27,7 +28,6 @@ import com.android.tools.idea.flagslegacy.StudioFlags;
 import com.android.tools.idea.profiling.capture.Capture;
 import com.android.tools.idea.profiling.capture.CaptureService;
 import com.android.tools.idea.stats.AndroidStudioUsageTracker;
-import com.android.tools.idea.stats.UsageTrackerUtils;
 import com.google.wireless.android.sdk.stats.AndroidStudioEvent;
 import com.google.wireless.android.sdk.stats.LayoutInspectorEvent;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -78,7 +78,7 @@ public class LayoutInspectorCaptureTask extends Task.Backgroundable {
     long captureDurationMs = System.currentTimeMillis() - startTimeMs;
     UsageTracker.log(UsageTrackerUtils.withProjectId(
       AndroidStudioEvent.newBuilder().setKind(AndroidStudioEvent.EventKind.LAYOUT_INSPECTOR_EVENT)
-        .setDeviceInfo(AndroidStudioUsageTracker.deviceToDeviceInfo(myClient.getDevice()))
+        .setDeviceInfo(UsageTrackerUtils.deviceToDeviceInfo(myClient.getDevice()))
         .setLayoutInspectorEvent(LayoutInspectorEvent.newBuilder()
           .setType(LayoutInspectorEvent.LayoutInspectorEventType.CAPTURE)
           .setDurationInMs(captureDurationMs)
@@ -87,7 +87,7 @@ public class LayoutInspectorCaptureTask extends Task.Backgroundable {
 
     UsageTracker.log(UsageTrackerUtils.withProjectId(
       AndroidStudioEvent.newBuilder().setKind(AndroidStudioEvent.EventKind.LAYOUT_INSPECTOR_EVENT)
-        .setDeviceInfo(AndroidStudioUsageTracker.deviceToDeviceInfo(myClient.getDevice()))
+        .setDeviceInfo(UsageTrackerUtils.deviceToDeviceInfo(myClient.getDevice()))
         .setLayoutInspectorEvent(LayoutInspectorEvent.newBuilder()
           .setType(LayoutInspectorEvent.LayoutInspectorEventType.CAPTURE)
           .setDurationInMs(captureDurationMs)

@@ -17,10 +17,10 @@ package com.android.tools.idea.editors.layoutInspector;
 
 import com.android.tools.adtui.workbench.*;
 import com.android.tools.analytics.UsageTracker;
+import com.android.tools.analytics.UsageTrackerUtils;
 import com.android.tools.idea.editors.layoutInspector.ui.LayoutInspectorPanel;
 import com.android.tools.idea.editors.layoutInspector.ui.LayoutTreeDefinition;
 import com.android.tools.idea.editors.layoutInspector.ui.PropertiesDefinition;
-import com.android.tools.idea.stats.UsageTrackerUtils;
 import com.google.wireless.android.sdk.stats.AndroidStudioEvent;
 import com.google.wireless.android.sdk.stats.LayoutInspectorEvent;
 import com.intellij.openapi.Disposable;

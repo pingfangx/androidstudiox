@@ -15,10 +15,10 @@
  */
 package com.android.tools.idea.profiling.capture;
 
+import com.android.tools.analytics.UsageTrackerUtils;
 import com.google.common.annotations.VisibleForTesting;
 import com.android.ddmlib.Client;
 import com.android.tools.analytics.UsageTracker;
-import com.android.tools.idea.stats.UsageTrackerUtils;
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.util.concurrent.FutureCallback;
