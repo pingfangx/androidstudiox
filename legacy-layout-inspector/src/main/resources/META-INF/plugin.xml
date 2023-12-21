@@ -20,6 +20,11 @@
         <li>Support Android Studio Dolphin | 2021.3.1</li>
         <li>Optimise selection to find the smallest view</li>
     </ul>
+
+    <b>1.1.1</b><br>
+    <ul>
+        <li>Support Android Studio Hedgehog | 2023.1.1</li>
+    </ul>
     ]]></change-notes>
 
     <!--base platform-->

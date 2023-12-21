@@ -6,3 +6,6 @@
 * Optimise selection to find the smallest view
   This optimization is inspired by [如何打造稳定、好用的 Android LayoutInspector？](https://mp.weixin.qq.com/s/Fzh6ZhyothpOGWjNMm3ubg)
   李建新 字节跳动技术团队
+
+## 1.1.1 - 20231221
+* Support Android Studio Hedgehog | 2023.1.1

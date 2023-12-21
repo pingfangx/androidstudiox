@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.pingfangx.plugin"
-version = "1.1.0"
+version = "1.1.1"
 
 repositories {
     mavenCentral()
@@ -32,7 +32,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("213")
-        untilBuild.set("223.*")
+        untilBuild.set("241.*")
     }
 
     signPlugin {
