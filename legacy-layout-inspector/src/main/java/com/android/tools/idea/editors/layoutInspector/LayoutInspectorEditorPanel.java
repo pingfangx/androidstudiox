@@ -43,11 +43,5 @@ public class LayoutInspectorEditorPanel extends WorkBench<LayoutInspectorContext
 
     init(new LayoutInspectorPanel(context), context, tools, false);
 
-    UsageTracker.log(UsageTrackerUtils.withProjectId(
-       AndroidStudioEvent.newBuilder()
-        .setKind(AndroidStudioEvent.EventKind.LAYOUT_INSPECTOR_EVENT)
-        .setLayoutInspectorEvent(LayoutInspectorEvent.newBuilder()
-          .setType(LayoutInspectorEvent.LayoutInspectorEventType.OPEN)),
-       project));
   }
 }

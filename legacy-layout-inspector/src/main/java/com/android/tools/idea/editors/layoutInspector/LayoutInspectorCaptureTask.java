@@ -73,30 +73,8 @@ public class LayoutInspectorCaptureTask extends Task.Backgroundable {
     indicator.setText("Capturing View Hierarchy");
     indicator.setIndeterminate(false);
 
-    long startTimeMs = System.currentTimeMillis();
     LayoutInspectorResult result = LayoutInspectorBridge.captureView(myWindow, options);
-    long captureDurationMs = System.currentTimeMillis() - startTimeMs;
-    UsageTracker.log(UsageTrackerUtils.withProjectId(
-      AndroidStudioEvent.newBuilder().setKind(AndroidStudioEvent.EventKind.LAYOUT_INSPECTOR_EVENT)
-        .setDeviceInfo(AndroidStudioUsageTracker.deviceToDeviceInfo(myClient.getDevice()))
-        .setLayoutInspectorEvent(LayoutInspectorEvent.newBuilder()
-          .setType(LayoutInspectorEvent.LayoutInspectorEventType.CAPTURE)
-          .setDurationInMs(captureDurationMs)
-          .setDataSize(result.getError().isEmpty() ? result.getData().length : 0)),
-      myProject));
 
-    UsageTracker.log(UsageTrackerUtils.withProjectId(
-      AndroidStudioEvent.newBuilder().setKind(AndroidStudioEvent.EventKind.LAYOUT_INSPECTOR_EVENT)
-        .setDeviceInfo(AndroidStudioUsageTracker.deviceToDeviceInfo(myClient.getDevice()))
-        .setLayoutInspectorEvent(LayoutInspectorEvent.newBuilder()
-          .setType(LayoutInspectorEvent.LayoutInspectorEventType.CAPTURE)
-          .setDurationInMs(captureDurationMs)
-          .setVersion(version.ordinal() + 1)
-          .setDataSize(result.getError().isEmpty()
-                       ? result.getData().length
-                       : 0)),
-        myProject));
-    
     if (!result.getError().isEmpty()) {
       myError = result.getError();
       return;

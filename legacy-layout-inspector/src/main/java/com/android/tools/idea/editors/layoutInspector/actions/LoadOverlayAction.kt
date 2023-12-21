@@ -72,11 +72,6 @@ class LoadOverlayAction(private val myPreview: ViewNodeActiveDisplay) :
       myPreview.setOverLay(null, null)
     }
     else {
-      UsageTracker.log(AndroidStudioEvent.newBuilder().setKind(AndroidStudioEvent.EventKind.LAYOUT_INSPECTOR_EVENT)
-               .setLayoutInspectorEvent(LayoutInspectorEvent.newBuilder()
-                                          .setType(LayoutInspectorEvent.LayoutInspectorEventType.OVERLAY_IMAGE)
-               ))
-
       loadOverlay(e)
     }
   }

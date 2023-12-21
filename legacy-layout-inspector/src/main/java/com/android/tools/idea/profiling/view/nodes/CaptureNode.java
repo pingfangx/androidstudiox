@@ -16,6 +16,7 @@
 package com.android.tools.idea.profiling.view.nodes;
 
 import com.android.tools.idea.profiling.capture.Capture;
+import com.intellij.ide.projectView.PresentationData;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.project.Project;
@@ -67,9 +68,13 @@ public class CaptureNode extends SimpleNode {
     }
   }
 
-  @Override
   protected void doUpdate() {
     getTemplatePresentation().clearText();
     getTemplatePresentation().addText(myCapture.getDescription(), SimpleTextAttributes.REGULAR_ATTRIBUTES);
   }
+
+  protected void doUpdate(@NotNull PresentationData presentation) {
+    doUpdate();
+  }
+
 }

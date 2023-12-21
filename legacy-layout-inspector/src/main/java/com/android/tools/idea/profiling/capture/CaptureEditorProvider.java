@@ -46,13 +46,6 @@ public class CaptureEditorProvider implements FileEditorProvider, DumbAware {
       throw new IllegalStateException("Type has been removed between accept and createEditor");
     }
 
-    UsageTracker.log(UsageTrackerUtils.withProjectId(
-      AndroidStudioEvent.newBuilder()
-        .setCategory(EventCategory.PROFILING)
-        .setKind(EventKind.PROFILING_OPEN)
-        .setProfilerCaptureType(type.getCaptureType()),
-      project));
-
     return type.createEditor(project, file);
   }
 
