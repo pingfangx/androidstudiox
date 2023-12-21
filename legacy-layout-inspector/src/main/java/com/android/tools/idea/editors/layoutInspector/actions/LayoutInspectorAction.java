@@ -18,7 +18,6 @@ package com.android.tools.idea.editors.layoutInspector.actions;
 import com.android.ddmlib.Client;
 import com.android.layoutinspector.model.ClientWindow;
 import com.android.tools.idea.ddms.DeviceContext;
-import com.android.tools.idea.ddms.actions.AbstractClientAction;
 import com.android.tools.idea.editors.layoutInspector.LayoutInspectorCaptureTask;
 import com.android.tools.idea.editors.layoutInspector.WindowPickerDialog;
 import com.android.tools.idea.ui.LayoutInspectorSettingsKt;
