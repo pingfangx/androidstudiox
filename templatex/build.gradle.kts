@@ -8,7 +8,7 @@ plugins {
 
 val templatexPluginId = "com.pingfangx.plugin.templatex"
 group = "com.pingfangx.plugin"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -41,7 +41,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("212")
-        untilBuild.set("222.*")
+        untilBuild.set("")
     }
 
     signPlugin {
